@@ -1,9 +1,9 @@
 {
   "dependencies": {
     "colors": "^1.4.0",
-    "inquire": "^0.4.8",
-    "inquirer": "^7.3.3"
+    "inquirer": "^9.2.7"
   },
+  "type": "module",
   "name": "04-tareas-hacer",
   "version": "1.0.0",
   "main": "app.js",

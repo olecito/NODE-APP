@@ -1,73 +1,145 @@
-const inquirer = require('inquirer');
-require('colors');
+import colors from "colors";
+import inquirer from 'inquirer';
+
+
 
 
 
 
 const preguntas = [
+
     {
-        type: 'list',
-        name: 'opcion',
-        message: 'Que desea hacer?',
-        choices: [
-            {
-                value: '1',
-                name: '1. Crear Tarea'
-            },
-            {
-                value: '2',
-                name: '2. Listar Tareas'
-            },
-            {
-                value: '3',
-                name: '3. Tareas completadas'
-            },
-            {
-                value: '4',
-                name: '4. Tareas pendientes'
-            },
-            {
-                value: '5',
-                name: '5. Completar Tarea(s)'
-            },
-            {
-                value: '6',
-                name: '6. Borrar Tarea'
-            },
-            {
-                value: '0',
-                name: '. Salir'
-            }
-        ]}
-];
+  
+      type: "list",
+  
+      name: "opcion",
+  
+      message: "Que desea hacer?",
+  
+      choices: [
+  
+        {
+  
+          value: "1",
+  
+          name: `${colors.magenta("1.")} Crear tarea`,
+  
+        },
+  
+        {
+  
+          value: "2",
+  
+          name: `${colors.magenta("2.")} Listar tareas`,
+  
+        },
+  
+        {
+  
+          value: "3",
+  
+          name: `${colors.magenta("3.")} Tareas completadas`,
+  
+        },
+  
+        {
+  
+          value: "4",
+  
+          name: `${colors.magenta("4.")} Tareas pendientes`,
+  
+        },
+  
+        {
+  
+          value: "5",
+  
+          name: `${colors.magenta("5.")} Completar tarea(s)`,
+  
+        },
+  
+        {
+  
+          value: "6",
+  
+          name: `${colors.magenta("6.")} Borrar tarea`,
+  
+        },
+  
+        {
+  
+          value: "0",
+  
+          name: `${colors.magenta("0.")} Salir\n`,
+  
+        },
+  
+      ],
+  
+    },
+  
+  ];
+  
+
 
 const inquirerMenu = async () => {
 
+
+
+
     console.clear();
-    console.log('==========================='.magenta);
-    console.log('  Seleccione una opcion  ');
-    console.log('===========================\n'.magenta);
+
+    console.log(colors.magenta("=========================="));
+
+    console.log(("Seleccione una opción"));
+  
+    console.log(colors.magenta("==========================\n"));
+
 
     const { opcion } = await inquirer.prompt(preguntas);
 
+
+
+
     return opcion;
 
+
+
+
 }
 
-const pausa = async() => {
- const question = [
+
+
+
+const pausa = async () => {
+
+  const question = [
+
     {
-        type: 'input',
-        name: 'enter',
-        message: `Presione ${ 'enter'.green } para continuar`
-    }
- ];
- console.log('\n')
- await inquirer.prompt(question);
-}
+
+      type: "input",
+
+      name: "enter",
+
+      message: `Presione ${"enter".green} para continuar`,
+
+    },
+
+  ];
+
+  console.log("\n");
+
+  await inquirer.prompt(question);
+
+};
 
 
-module.exports = {
-    inquirerMenu,
-    pausa
-}
+
+
+export {
+
+  inquirerMenu,
+
+  pausa,
+
+};
