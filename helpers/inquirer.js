@@ -1,5 +1,5 @@
-const inquirer = import('inquirer');
-import('colors');
+const inquirer = require('inquirer');
+require('colors');
 
 
 
@@ -48,7 +48,7 @@ const inquirerMenu = async () => {
     console.log('  Seleccione una opcion  ');
     console.log('===========================\n'.magenta);
 
-    const { opcion } = await inquirer(preguntas);
+    const { opcion } = await inquirer.prompt(preguntas);
 
     return opcion;
 

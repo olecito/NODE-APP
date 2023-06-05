@@ -1,5 +1,5 @@
-const inquirer = import('inquirer');
-import('colors');
+
+require('colors');
 const { inquirerMenu, pausa } = require('./helpers/inquirer');
 
 
